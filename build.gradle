@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
+    implementation 'org.apache.kafka:kafka-clients:3.7.1'
+
+    // for Properties
+    implementation 'org.ini4j:ini4j:0.5.4'
+
+//    implementation files('/home/chomaro/IdeaProjects/kafka-sink-connector-master/build/libs/kafka-sink-connector-1.0.jar')
+//    implementation fileTree(dir: '/home/chomaro/IdeaProjects/kafka-sink-connector-master/build/libs', includes: ['*.jar'])
+
+}
+
+test {
+    useJUnitPlatform()
+}
